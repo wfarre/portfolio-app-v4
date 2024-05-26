@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import HeroImage from "@/assets/images/hero-image.svg";
+import HeroImage from "@/assets/images/dev-image.svg";
 
 const Header = () => {
   return (
