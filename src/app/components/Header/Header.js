@@ -7,7 +7,7 @@ import HeroImage from "@/assets/images/dev-image.svg";
 
 const Header = () => {
   return (
-    <header className=" mx-40 mt-32 ">
+    <header className=" mt-32 ">
       <div className="flex gap-4 items-center">
         <ul className="flex flex-col gap-3 w-fit max-w-[500px]">
           <li>
