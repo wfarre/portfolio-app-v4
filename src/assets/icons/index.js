@@ -14,7 +14,7 @@ import redux from "./redux.svg";
 import sass from "./sass.svg";
 import tailwindcss from "./tailwindcss.svg";
 import typescript from "./typescript.svg";
-import linkedin from "./linkedin.svg";
+import Linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import car from "./car.svg";
 import estate from "./estate.svg";
@@ -28,6 +28,12 @@ import soundon from "./soundon.png";
 import soundoff from "./soundoff.png";
 import svelte from "./svelte.svg";
 import liveurl from "./live-url.svg";
+import phoneIcon from "./phone.svg";
+import houseIcon from "./house.svg";
+import envelopeIcon from "./envelope.svg";
+import FrontendMentor from "./frontend-mentor.svg";
+import Instagram from "./instagram.svg";
+import Facebook from "./facebook.svg";
 
 export {
   css,
@@ -46,7 +52,7 @@ export {
   sass,
   tailwindcss,
   typescript,
-  linkedin,
+  Linkedin,
   twitter,
   car,
   estate,
@@ -60,4 +66,10 @@ export {
   soundoff,
   svelte,
   liveurl,
+  phoneIcon,
+  envelopeIcon,
+  houseIcon,
+  FrontendMentor,
+  Instagram,
+  Facebook,
 };

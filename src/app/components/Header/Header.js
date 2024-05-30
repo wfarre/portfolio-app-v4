@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import HeroImage from "@/assets/images/dev-image.svg";
+import Button from "../Button/Button";
 
 const Header = () => {
   return (
-    <header className=" mt-32 ">
+    <header className=" mt-32 max-w-5xl lg:mx-auto sm:px-10 mx-4 ">
       <div className="flex gap-4 items-center">
         <ul className="flex flex-col gap-3 w-fit max-w-[500px]">
           <li>
@@ -23,19 +24,10 @@ const Header = () => {
             <p className="font-bold text-xl">Front-End Web Developer</p>
           </li>
           <li>
-            <p>
-              Thankfully, I am a web developer who enjoy building websites and
-              web applications. My main stack is Google searches! Besides
-              Google, I generally use React or Svelte.
-            </p>
+            <p>I am specialised in React and Google searches.</p>
           </li>
           <li className="mt-3">
-            <motion.button
-              whileHover={{ scale: 1.2 }}
-              className="bg-gradient-to-tr from-teal-500 to-teal-200 py-2 px-6 rounded-lg text-white font-bold uppercase"
-            >
-              Contact me
-            </motion.button>
+            <Button text={"Contact me"} />
           </li>
         </ul>
         <div>

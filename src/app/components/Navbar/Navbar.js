@@ -21,7 +21,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className=" py-10">
+    <nav className="py-10 max-w-5xl lg:mx-auto sm:px-10 mx-4">
       <ul className="flex justify-end gap-4 align-middle">
         <li className="mr-auto">
           <motion.div whileHover={{ scale: 1.2 }}>
