@@ -24,27 +24,93 @@ const links = [
   },
 ];
 
+// function useWindowSize() {
+//   // Initialize state with undefined width/height so server and client renders match
+//   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+//   const [windowSize, setWindowSize] = useState({
+//     width: 0,
+//     height: 0,
+//   });
+
+//   useEffect(() => {
+//     // only execute all the code below in client side
+//     // Handler to call on window resize
+//     function handleScroll() {
+//       // Set window width/height to state
+//       setWindowSize({
+//         width: window?.innerWidth,
+//         height: window?.innerHeight,
+//       });
+//     }
+
+//     // Add event listener
+//     if (typeof window !== "object") {
+//       window?.addEventListener("resize", handleResize);
+
+//       console.log(window);
+//       // Call handler right away so state gets updated with initial window size
+//       handleResize(window);
+//       // Remove event listener on cleanup
+//       return () => window?.removeEventListener("resize", handleResize);
+//     }
+//   }, []); // Empty array ensures that effect is only run on mount
+//   return windowSize;
+// }
+
+const useScrollY = () => {
+  const [windowScrollY, setWindowScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setWindowScrollY(window?.scrollY);
+    };
+
+    if (typeof window !== undefined)
+      window?.addEventListener("scroll", (e) => {
+        // setIsMenuOpen(false);
+        // setWindowScrollY(window?.scrollY);
+        handleScroll();
+      });
+
+    return () => window?.removeEventListener("scroll", handleScroll);
+  }, []);
+  return windowScrollY;
+};
+
 const Navbar = ({ windowSize }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowScrollY, setWindowScrollY] = useState(false);
+  // const [windowScrollY, setWindowScrollY] = useState(false);
+  const windowScrollY = useScrollY();
 
-  window.addEventListener("scroll", (e) => {
+  console.log(windowScrollY);
+
+  console.log(windowSize);
+
+  useEffect(() => {
     setIsMenuOpen(false);
-    setWindowScrollY(window.scrollY);
-  });
+  }, [windowScrollY]);
+
+  // useEffect(() => {
+  // if (window !== undefined)
+  //   window?.addEventListener("scroll", (e) => {
+  //     setIsMenuOpen(false);
+  //     setWindowScrollY(window?.scrollY);
+  //     return () => window?.removeEventListener("scroll", handleResize);
+  //   });
+  // }, []);
 
   const variants = {
     open: {
-      width: "280px",
+      width: windowSize.width > 640 ? "340px" : "280px",
     },
     closed: {
       width: "40px",
     },
   };
 
-  useEffect(() => {
-    console.log(windowScrollY);
-  }, [windowScrollY]);
+  // useEffect(() => {
+  //   console.log(windowScrollY);
+  // }, [windowScrollY]);
 
   return (
     <nav
@@ -85,9 +151,6 @@ const Navbar = ({ windowSize }) => {
                   </li>
                 );
               })}
-              {/* <li className="rounded-lg bg-gradient-to-tr from-teal-500 to-teal-200 px-2 py-1 text-white">
-                Contact me
-              </li> */}
             </ul>
           </motion.li>
         )}
