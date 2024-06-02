@@ -93,8 +93,6 @@ import Button from "./components/Button/Button";
 import SectionHeader from "./components/SectionHeader/SectionHeader";
 import { useEffect, useState } from "react";
 import ContactModal from "./components/Modals/ContactModal";
-// import { Instagram } from "@mui/icons-material";
-// import TaskusLogo from "@/assets/images/logo/taskus-logo.jpeg";
 
 const skills = [
   html,
@@ -361,7 +359,6 @@ export default function Home() {
                 })}
               </ul>
             </li>
-            {/* <li className=" bg-teal-200/30 px-4 py-4 rounded-xl"> */}
             <li>
               <h3 className="mb-6 font-bold">Language skills</h3>
               <ul className="flex flex-wrap justify-start gap-10">
@@ -385,9 +382,6 @@ export default function Home() {
           id="projects"
           className="mx-4 mb-40 mt-32 max-w-5xl sm:px-10 lg:mx-auto"
         >
-          {/* <h2 className="font-bold uppercase text-2xl text-center bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-transparent mb-12">
-            Projects
-          </h2> */}
           <SectionHeader
             headerTitle={"Projects"}
             headerContent={`Here are some examples of different personal projects I made. Some of them are projects I made for my degree at OpenClassrooms or others are design provided by frontendmentor.io.`}
@@ -457,7 +451,6 @@ export default function Home() {
                       color={"inherit"}
                       className="relative h-10 w-10 overflow-hidden bg-teal-500"
                     >
-                      {/* {experience.logo} */}
                       {experience.logo && (
                         <Image
                           className="left-0 top-0 object-contain"

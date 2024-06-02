@@ -1,6 +1,5 @@
 "use client";
 
-import { Opacity } from "@mui/icons-material";
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -36,18 +35,10 @@ const Navbar = ({ windowSize }) => {
 
   const variants = {
     open: {
-      // scaleX: [1, 1, 0.1, 0.1],
-      // borderRadius: ["0", "16px", "50%", "50%"],
-      // x: ["0", "0", "0", "70%"],
-      // Opacity: [1, 1, 1, 0],
       width: "280px",
     },
     closed: {
       width: "40px",
-      // scaleX: [0.1, 0.1, 0.5, 1],
-      // borderRadius: ["50%", "50%", "16px", "0"],
-      // Opacity: [0, 1, 1, 1],
-      // x: ["70%", "0", "0", "0"],
     },
   };
 
