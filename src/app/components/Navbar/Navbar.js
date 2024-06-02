@@ -48,7 +48,7 @@ const Navbar = ({ windowSize }) => {
 
   return (
     <nav
-      className={`fixed left-0 top-0 z-50 w-full bg-white sm:bg-transparent`}
+      className={`fixed left-0 top-0 z-40 w-full bg-white sm:bg-transparent`}
     >
       <ul
         className={`flex max-w-5xl items-center justify-end gap-4 bg-slate-300/20 px-4 py-2 align-middle sm:bg-transparent sm:px-10 sm:py-10 lg:mx-auto`}

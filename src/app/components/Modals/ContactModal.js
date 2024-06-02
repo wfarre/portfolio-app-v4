@@ -77,7 +77,7 @@ const ContactModal = ({ handleCloseModal }) => {
               <SectionHeader headerTitle={"Contact"} />
               <form
                 onSubmit={(e) => e.preventDefault()}
-                className="flex h-[80vh] max-h-[600px] w-[90vw] min-w-80 max-w-[600px] flex-col items-center gap-4"
+                className="flex h-[80vh] max-h-[400px] w-[80vw] max-w-[600px] flex-col items-center gap-4 sm:w-[90vw] sm:min-w-80"
               >
                 {formFields.map((field, index) => {
                   return (
