@@ -20,7 +20,7 @@ const Card = (props) => {
     <figure className="w-full">
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="group relative w-full aspect-[621/321] rounded-lg overflow-hidden after:absolute after:bg-teal-500 after:top-0 after:left-0 after:z-10 after:h-full after:w-full after:opacity-0 hover:after:opacity-70 after:transition-all after:duration-300 "
+        className="group relative aspect-[621/321] w-full overflow-hidden rounded-lg after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-teal-500 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-70"
       >
         <Image
           className="object-cover"
@@ -29,11 +29,11 @@ const Card = (props) => {
           alt="ecommerce project"
         />
 
-        <ul className="group-hover:opacity-100 transition-all duration-500 opacity-0 absolute h-full w-full left-0 top-0 z-20 flex justify-center items-center flex-col gap-4">
+        <ul className="absolute left-0 top-0 z-20 flex h-full w-full flex-col items-center justify-center gap-4 opacity-0 transition-all duration-500 group-hover:opacity-100">
           {props.github && (
             <li>
               <Link
-                className="flex gap-2 items-center w-fit py-1 px-2 text-white rounded-md uppercase relative after:absolute after:bottom-0 after:left-0 after:origin-left after:scale-0 after:w-full after:h-[2px] after:bg-white hover:after:scale-100 after:transition-all after:duration-300"
+                className="relative flex w-fit items-center gap-2 rounded-md px-2 py-1 uppercase text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-0 after:bg-white after:transition-all after:duration-300 hover:after:scale-100"
                 href={props.github}
               >
                 View code
@@ -42,7 +42,7 @@ const Card = (props) => {
           )}
           <li>
             <Link
-              className="flex gap-2 items-center w-fit py-1 px-2 uppercase text-white relative after:absolute after:bottom-0 after:left-0 after:origin-left after:scale-0 after:w-full after:h-[2px] after:bg-white hover:after:scale-100 after:transition-all after:duration-300"
+              className="relative flex w-fit items-center gap-2 px-2 py-1 uppercase text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-0 after:bg-white after:transition-all after:duration-300 hover:after:scale-100"
               href={props.live}
             >
               View website
@@ -50,15 +50,15 @@ const Card = (props) => {
           </li>
         </ul>
       </motion.div>
-      <h3 className="uppercase text-base pt-4 pb-2 text-slate-950">
+      <h3 className="pb-2 pt-4 text-base uppercase text-slate-950">
         {props.title}
       </h3>
 
-      <ul className="flex gap-2 pb-4 items-center flex-wrap">
+      <ul className="flex flex-wrap items-center gap-2 pb-4">
         {props.tags.map((tag, index) => {
           return (
             <li
-              className="w-fit text-xs uppercase bg-gradient-to-tr from-teal-500 to-teal-200 text-white rounded-xl py-1 px-2"
+              className="w-fit rounded-xl bg-gradient-to-tr from-teal-500 to-teal-200 px-2 py-1 text-xs uppercase text-white"
               key={tag + index}
             >
               {tag}
@@ -66,7 +66,7 @@ const Card = (props) => {
           );
         })}
         <li className="ml-auto md:hidden">
-          <ul className="flex gap-2 items-center">
+          <ul className="flex items-center gap-2">
             {props.github && (
               <li>
                 <Link href={props.github}>

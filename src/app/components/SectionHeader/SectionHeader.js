@@ -3,8 +3,8 @@ import React from "react";
 
 const SectionHeader = ({ headerTitle, headerContent, headerLinks }) => {
   return (
-    <header className="flex flex-col gap-3 mb-12">
-      <h2 className="font-bold uppercase text-3xl text-center bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-transparent">
+    <header className="mb-12 flex flex-col gap-3 text-center sm:text-left">
+      <h2 className="bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-center text-3xl font-bold uppercase text-transparent">
         {headerTitle}
       </h2>
       {headerContent && <p className="">{headerContent}</p>}
@@ -13,7 +13,7 @@ const SectionHeader = ({ headerTitle, headerContent, headerLinks }) => {
         return (
           <Link
             key={link.text + index}
-            className="uppercase text-teal-500  hover:opacity-70 self-end"
+            className="self-end uppercase text-teal-500 hover:opacity-70"
             href={link.url}
             target="_blank"
           >

@@ -92,7 +92,7 @@ import {
 import Button from "./components/Button/Button";
 import SectionHeader from "./components/SectionHeader/SectionHeader";
 import { useEffect, useState } from "react";
-import ContactModal from "./components/ContactModal/ContactModal";
+import ContactModal from "./components/Modals/ContactModal";
 // import { Instagram } from "@mui/icons-material";
 // import TaskusLogo from "@/assets/images/logo/taskus-logo.jpeg";
 
@@ -319,17 +319,24 @@ function useWindowSize() {
 
 export default function Home() {
   const size = useWindowSize();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     console.log(size);
   }, [size]);
   return (
-    <>
-      <ContactModal />
-      <Navbar />
-      <Header />
+    <div className="relative w-full">
+      {isContactModalOpen && (
+        <ContactModal handleCloseModal={() => setIsContactModalOpen(false)} />
+      )}
+
+      <Navbar windowSize={size} />
+      <Header setIsContactModalOpen={() => setIsContactModalOpen(true)} />
       <main>
-        <section className=" mt-48 max-w-5xl lg:mx-auto sm:px-10 mx-4">
+        <section
+          id="skills"
+          className="mx-4 mt-48 max-w-5xl sm:px-10 lg:mx-auto"
+        >
           <SectionHeader
             headerTitle={"skills"}
             headerContent={
@@ -339,13 +346,13 @@ export default function Home() {
 
           <ul>
             <li className="mb-12">
-              <h3 className="font-bold mb-6">Progamming skills</h3>
-              <ul className="flex flex-wrap gap-10 justify-start">
+              <h3 className="mb-6 font-bold">Progamming skills</h3>
+              <ul className="flex flex-wrap justify-start gap-10">
                 {skills.map((skill, index) => {
                   return (
                     <motion.li
                       whileHover={{ scale: 1.2 }}
-                      className=" flex items-center justify-center w-20 h-20 p-4 rounded-lg shadow-slate-600/20 shadow-2xl sha"
+                      className="flex h-20 w-20 items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-slate-600/20"
                       key={skill + index}
                     >
                       <Image src={skill} alt={skill}></Image>
@@ -354,14 +361,15 @@ export default function Home() {
                 })}
               </ul>
             </li>
+            {/* <li className=" bg-teal-200/30 px-4 py-4 rounded-xl"> */}
             <li>
-              <h3 className="font-bold mb-6">Language skills</h3>
-              <ul className="flex flex-wrap gap-10 justify-start">
+              <h3 className="mb-6 font-bold">Language skills</h3>
+              <ul className="flex flex-wrap justify-start gap-10">
                 {languages.map((skill, index) => {
                   return (
                     <motion.li
                       whileHover={{ scale: 1.2 }}
-                      className=" flex items-center justify-center w-20 h-20 p-4 rounded-lg shadow-slate-600/20 shadow-2xl"
+                      className="flex h-20 w-20 items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-slate-600/20"
                       key={skill + index}
                     >
                       <Image src={skill} alt={skill}></Image>
@@ -373,7 +381,10 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="mt-32 mb-40 max-w-5xl lg:mx-auto sm:px-10 mx-4">
+        <section
+          id="projects"
+          className="mx-4 mb-40 mt-32 max-w-5xl sm:px-10 lg:mx-auto"
+        >
           {/* <h2 className="font-bold uppercase text-2xl text-center bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-transparent mb-12">
             Projects
           </h2> */}
@@ -387,10 +398,10 @@ export default function Home() {
               },
             ]}
           />
-          <ul className="flex gap-4 flex-wrap justify-between">
+          <ul className="flex flex-wrap justify-between gap-4">
             {projects.map((project, index) => {
               return (
-                <li key={project.title + index} className="sm:w-[48%] w-full">
+                <li key={project.title + index} className="w-full sm:w-[48%]">
                   <Card
                     github={project.links.github}
                     live={project.links.live}
@@ -404,7 +415,10 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="mb-3 max-w-5xl lg:mx-auto sm:px-10 mx-4">
+        <section
+          id="experiences"
+          className="mx-4 mb-3 max-w-5xl sm:px-10 lg:mx-auto"
+        >
           <SectionHeader
             headerTitle={"Experiences"}
             headerContent={
@@ -429,7 +443,7 @@ export default function Home() {
                       variant="body2"
                       color="text.secondary"
                     >
-                      <h3 className="text-teal-500 uppercase text-xl font-bold">
+                      <h3 className="text-xl font-bold uppercase text-teal-500">
                         {experience.company}
                       </h3>
                       <p>
@@ -441,7 +455,7 @@ export default function Home() {
                     <TimelineConnector />
                     <TimelineDot
                       color={"inherit"}
-                      className="relative w-10 h-10 overflow-hidden bg-teal-500"
+                      className="relative h-10 w-10 overflow-hidden bg-teal-500"
                     >
                       {/* {experience.logo} */}
                       {experience.logo && (
@@ -464,19 +478,28 @@ export default function Home() {
                         variant="body2"
                         color="text.secondary"
                       >
-                        <h3 className="text-teal-500 uppercase text-xl font-bold">
+                        <h3 className="text-xl font-bold uppercase text-teal-500">
                           {experience.company}
                         </h3>
-                        <p>
+                        <p className="text-sm sm:text-base">
                           {experience.from} - {experience.to}
                         </p>
                       </TimelineOppositeContent>
                     )}
-                    <div className=" bg-white py-3 px-4 shadow-sm rounded-lg w-[60vw] sm:w-auto">
-                      <h4 className="font-bold text-left">{experience.role}</h4>
-                      <ul className="list-disc text-left pl-4">
+                    <div className="w-[60vw] rounded-lg bg-white px-4 py-3 shadow-sm sm:w-auto">
+                      <h4 className="text-left text-sm font-bold sm:text-base">
+                        {experience.role}
+                      </h4>
+                      <ul className="list-disc pl-4 text-left">
                         {experience.activity.map((act, actIndex) => {
-                          return <li key={`act${index + actIndex}`}>{act}</li>;
+                          return (
+                            <li
+                              className="text-sm sm:text-base"
+                              key={`act${index + actIndex}`}
+                            >
+                              {act}
+                            </li>
+                          );
                         })}
                       </ul>
                     </div>
@@ -487,18 +510,24 @@ export default function Home() {
           </Timeline>
         </section>
 
-        <section className="flex justify-center flex-col items-center text-center gap-6  bg-slate-950/80 py-8 text-white mt-32">
-          <header className="text-2xl uppercase font-bold">
+        <section
+          id="contact"
+          className="mt-32 flex flex-col items-center justify-center gap-6 bg-slate-950/80 py-8 text-center text-white"
+        >
+          <header className="text-2xl font-bold uppercase">
             <h2>Any question? Feel free to contact me!</h2>
           </header>
           <Button text={"Contact me"} />
         </section>
 
-        <section className=" mt-32 mb-32 max-w-5xl lg:mx-auto sm:px-10 mx-4">
+        <section
+          id="contact-information"
+          className="mx-4 mb-32 mt-32 max-w-5xl sm:px-10 lg:mx-auto"
+        >
           <SectionHeader headerTitle={"Contact Information"} />
 
-          <ul className="flex  gap-8 items-center w-full justify-between flex-wrap flex-col sm:flex-row ">
-            <li className="relative w-52 sm:w-[40%] max-h-96 aspect-[767/810]">
+          <ul className="flex w-full flex-col flex-wrap items-center justify-between gap-8 sm:flex-row">
+            <li className="relative aspect-[767/810] max-h-96 w-52 sm:w-[40%]">
               <Image src={ContactImage} alt="" fill />
             </li>
             <li className="flex flex-col gap-3">
@@ -522,15 +551,15 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-slate-950/80 text-white pt-4">
-        <ul className="flex gap-4 mt-4 pb-4 justify-center">
+      <footer className="bg-slate-950/80 pt-4 text-white">
+        <ul className="mt-4 flex justify-center gap-4 pb-4">
           {snsLinks.map((link) => {
             return (
               <motion.div key={link.description} whileHover={{ scale: 1.1 }}>
                 <Link
                   href={link.url}
                   target="_blank"
-                  className="text-2xl sm:text-4xl text-white hover:text-teal-200 transition-all duration-300"
+                  className="text-2xl text-white transition-all duration-300 hover:text-teal-200 sm:text-4xl"
                 >
                   {link.logo}
                 </Link>
@@ -543,6 +572,6 @@ export default function Home() {
           2024
         </div>
       </footer>
-    </>
+    </div>
   );
 }
