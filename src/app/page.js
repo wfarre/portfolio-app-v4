@@ -298,14 +298,14 @@ function useWindowSize() {
     function handleResize() {
       // Set window width/height to state
       setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window?.innerWidth,
+        height: window?.innerHeight,
       });
     }
 
     // Add event listener
-    if (window) {
-      window.addEventListener("resize", handleResize);
+    if (window !== undefined) {
+      window?.addEventListener("resize", handleResize);
     }
 
     // Call handler right away so state gets updated with initial window size
