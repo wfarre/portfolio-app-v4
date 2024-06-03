@@ -15,7 +15,7 @@ const Header = ({ setIsContactModalOpen }) => {
       <div className="flex flex-col-reverse items-center gap-4 sm:flex-row">
         <ul className="flex w-fit max-w-[500px] flex-col gap-3">
           <li>
-            <h1 className="text-center text-6xl font-bold text-slate-900">
+            <h1 className="text-6xl font-bold text-slate-900">
               Hello, <br /> {"I'm "}
               <span className="bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-transparent">
                 William
