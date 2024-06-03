@@ -4,7 +4,7 @@ import React from "react";
 const SectionHeader = ({ headerTitle, headerContent, headerLinks }) => {
   return (
     <header className="mb-12 flex flex-col gap-3 text-center sm:text-left">
-      <h2 className="bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-center text-3xl font-bold uppercase text-transparent">
+      <h2 className="bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-3xl font-bold uppercase text-transparent">
         {headerTitle}
       </h2>
       {headerContent && <p className="">{headerContent}</p>}
