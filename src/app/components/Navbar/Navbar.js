@@ -101,8 +101,9 @@ const Navbar = ({ windowSize }) => {
 
   const variants = {
     open: {
-      width: windowSize.width > 640 ? "340px" : "280px",
+      width: "280px",
     },
+
     closed: {
       width: "40px",
     },
@@ -114,24 +115,24 @@ const Navbar = ({ windowSize }) => {
 
   return (
     <nav
-      className={`fixed left-0 top-0 z-40 w-full bg-white sm:bg-transparent`}
+      className={`fixed left-0 top-0 z-40 w-full bg-white text-sm sm:bg-transparent`}
     >
       <ul
         className={`flex max-w-5xl items-center justify-end gap-4 bg-slate-300/20 px-4 py-2 align-middle sm:bg-transparent sm:px-10 sm:py-10 lg:mx-auto`}
       >
-        {(windowSize.width > 640 && windowScrollY < 70) ||
-          (windowSize.width < 640 && (
-            <li className="mr-auto">
-              <motion.div whileHover={{ scale: 1.2 }}>
-                <Link
-                  className="rounded-lg bg-gradient-to-tr from-teal-500 to-teal-200 p-2 text-lg font-bold text-white"
-                  href="/"
-                >
-                  WF
-                </Link>
-              </motion.div>
-            </li>
-          ))}
+        {((windowSize.width > 640 && windowScrollY < 70) ||
+          windowSize.width < 640) && (
+          <li className="mr-auto">
+            <motion.div whileHover={{ scale: 1.2 }}>
+              <Link
+                className="rounded-lg bg-gradient-to-tr from-teal-500 to-teal-200 p-2 text-lg font-bold text-white"
+                href="/"
+              >
+                WF
+              </Link>
+            </motion.div>
+          </li>
+        )}
 
         {windowSize.width >= 640 && windowScrollY < 70 && (
           <motion.li className="absolute right-0 top-0 h-screen w-[50vw] pl-4 pt-24 sm:relative sm:h-auto sm:w-auto sm:pt-0">
