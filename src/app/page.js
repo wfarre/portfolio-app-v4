@@ -289,8 +289,8 @@ function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
+    width: undefined,
+    height: undefined,
   });
 
   useEffect(() => {
@@ -305,10 +305,8 @@ function useWindowSize() {
     }
 
     // Add event listener
-    if (typeof window !== "object") {
+    if (window !== undefined) {
       window?.addEventListener("resize", handleResize);
-
-      console.log(window);
       // Call handler right away so state gets updated with initial window size
       handleResize(window);
       // Remove event listener on cleanup
@@ -319,8 +317,11 @@ function useWindowSize() {
 }
 
 export default function Home() {
+  // console.log(window.innerWidth);
   const size = useWindowSize();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  console.log(size);
 
   return (
     <div className="relative w-full">
