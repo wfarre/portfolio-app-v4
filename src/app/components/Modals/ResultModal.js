@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Button from "../Button/Button";
 
-const ResultModal = ({ handleClick }) => {
+const ResultModal = ({ isSuccess, handleClick }) => {
   return (
     <>
       <motion.div
@@ -13,7 +13,11 @@ const ResultModal = ({ handleClick }) => {
         transition={{ ease: "linear", delay: 0, duration: 0.4 }}
         className="h-50 w-50 flex flex-col items-center gap-5 rounded-lg bg-white px-4 py-5"
       >
-        <p className="text-2xl">Thank you for your message!</p>
+        <p className="text-2xl">
+          {isSuccess
+            ? "Thank you for your message!"
+            : "Ooops! Something wrong happenned..."}{" "}
+        </p>
         <div>
           <Button text={"OK"} handleClick={handleClick}></Button>
         </div>

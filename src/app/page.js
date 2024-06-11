@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
@@ -22,54 +22,29 @@ import ContactImage from "@/assets/images/contact-image.svg";
 import dynamic from "next/dynamic";
 
 import {
-  car,
-  contact,
   css,
-  estate,
-  express,
   git,
   github,
   html,
   javascript,
-  // Linkedin,
-  mongodb,
-  mui,
+  // mui,
   nextjs,
-  nodejs,
-  pricewise,
+  // nodejs,
   react,
-  redux,
+  // redux,
   sass,
-  snapgram,
-  summiz,
   tailwindcss,
-  threads,
   typescript,
   svelte,
-  liveurl,
   phoneIcon,
   envelopeIcon,
   houseIcon,
-  FrontendMentor,
-  // Instagram,
-  // Facebook,
 } from "../assets/icons";
 
 import english from "@/assets/icons/english.svg";
 import japanese from "@/assets/icons/japanese.svg";
 import french from "@/assets/icons/french.svg";
 import chinese from "@/assets/icons/chinese.svg";
-
-import HtmlIcon from "@/assets/icons/html.svg";
-import CssIcon from "@/assets/icons/css.svg";
-// import JavascriptIcon from "@/assets/icons/javascript.svg";
-// import reactIcon from "@/assets/icons/react.svg";
-// import sassIcon from "@/assets/icons/sass.svg";
-// import typescriptIcon from "@/assets/icons/typescript.svg";
-// // import svleteIcon from "@/assets/icons/svelte.svg";
-// import tailwindcssIcon from "@/assets/icons/tailwindcss.svg";
-// import nextIcon from "@/assets/icons/nextjs.svg";
-// import githubIcon from "@/assets/icons/github.svg";
 
 import KasaImg from "@/assets/images/kasa.png";
 import PetitsPlatsImg from "@/assets/images/petitsplats.png";
@@ -82,7 +57,6 @@ import Card from "./components/Card/Card";
 import TaskusLogo from "@/assets/images/logo/taskus-logo.jpeg";
 import JELogo from "@/assets/images/logo/je-logo.jpeg";
 import BanisterLogo from "@/assets/images/logo/banister-logo.jpeg";
-import { Icon } from "@mui/material";
 import {
   Copyright,
   Facebook,
@@ -105,6 +79,7 @@ const skills = [
   svelte,
   tailwindcss,
   nextjs,
+  git,
   github,
 ];
 
@@ -321,7 +296,10 @@ export default function Home() {
   const size = useWindowSize();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  console.log(size);
+  const projectVariant = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
 
   return (
     <div className="relative w-full">
@@ -350,11 +328,25 @@ export default function Home() {
                 {skills.map((skill, index) => {
                   return (
                     <motion.li
-                      whileHover={{ scale: 1.2 }}
-                      className="flex h-20 w-20 items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-slate-600/20"
+                      whileInView={{
+                        opacity: [0, 1],
+                        scale: [0.1, 1],
+                        translateX: ["-50%", "0"],
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.2,
+                        type: "tween",
+                      }}
                       key={skill + index}
                     >
-                      <Image src={skill} alt={skill}></Image>
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.5, type: "spring" }}
+                        className="flex h-20 w-20 items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-slate-600/20"
+                      >
+                        <Image src={skill} alt={skill}></Image>
+                      </motion.div>
                     </motion.li>
                   );
                 })}
@@ -366,11 +358,25 @@ export default function Home() {
                 {languages.map((skill, index) => {
                   return (
                     <motion.li
-                      whileHover={{ scale: 1.2 }}
-                      className="flex h-20 w-20 items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-slate-600/20"
+                      whileInView={{
+                        opacity: [0, 1],
+                        scale: [0.1, 1],
+                        translateX: ["-50%", "0"],
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.2,
+                        type: "tween",
+                      }}
                       key={skill + index}
                     >
-                      <Image src={skill} alt={skill}></Image>
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.5, type: "spring" }}
+                        className="flex h-20 w-20 items-center justify-center rounded-lg bg-white p-4 shadow-2xl shadow-slate-600/20"
+                      >
+                        <Image src={skill} alt={skill}></Image>
+                      </motion.div>
                     </motion.li>
                   );
                 })}
@@ -393,10 +399,24 @@ export default function Home() {
               },
             ]}
           />
-          <ul className="flex flex-wrap justify-between gap-4">
+          <motion.ul
+            className="flex flex-wrap justify-between gap-4"
+            transition={{
+              duration: 1.5,
+              staggerChildren: 0.2,
+              delay: 0.5,
+              type: "spring",
+            }}
+            initial="hidden"
+            whileInView={"show"}
+          >
             {projects.map((project, index) => {
               return (
-                <li key={project.title + index} className="w-full sm:w-[48%]">
+                <motion.li
+                  key={project.title + index}
+                  className="w-full sm:w-[48%]"
+                  variants={projectVariant}
+                >
                   <Card
                     github={project.links.github}
                     live={project.links.live}
@@ -404,10 +424,10 @@ export default function Home() {
                     title={project.title}
                     tags={project.tags}
                   />
-                </li>
+                </motion.li>
               );
             })}
-          </ul>
+          </motion.ul>
         </section>
 
         <section
@@ -438,12 +458,20 @@ export default function Home() {
                       variant="body2"
                       color="text.secondary"
                     >
-                      <h3 className="text-xl font-bold uppercase text-teal-500">
-                        {experience.company}
-                      </h3>
-                      <p>
-                        {experience.from} - {experience.to}
-                      </p>
+                      <motion.div
+                        whileInView={{
+                          opacity: [0, 1],
+                        }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 1.5 }}
+                      >
+                        <h3 className="text-xl font-bold uppercase text-teal-500">
+                          {experience.company}
+                        </h3>
+                        <p>
+                          {experience.from} - {experience.to}
+                        </p>
+                      </motion.div>
                     </TimelineOppositeContent>
                   )}
                   <TimelineSeparator>
@@ -471,15 +499,34 @@ export default function Home() {
                         variant="body2"
                         color="text.secondary"
                       >
-                        <h3 className="text-xl font-bold uppercase text-teal-500">
-                          {experience.company}
-                        </h3>
-                        <p className="text-sm sm:text-base">
-                          {experience.from} - {experience.to}
-                        </p>
+                        <motion.div
+                          whileInView={{
+                            opacity: [0, 1],
+                          }}
+                          viewport={{ once: true, amount: 0.1 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <h3 className="text-xl font-bold uppercase text-teal-500">
+                            {experience.company}
+                          </h3>
+                          <p className="text-sm sm:text-base">
+                            {experience.from} - {experience.to}
+                          </p>
+                        </motion.div>
                       </TimelineOppositeContent>
                     )}
-                    <div className="w-[60vw] rounded-lg bg-white px-4 py-3 shadow-sm sm:w-auto">
+                    <motion.div
+                      whileInView={{
+                        translateX: [
+                          `${index % 2 === 0 ? "100%" : "-100%"}`,
+                          "0",
+                        ],
+                        opacity: [0, 1],
+                      }}
+                      viewport={{ once: true, amount: 0.1 }}
+                      transition={{ duration: 1.5 }}
+                      className="w-[60vw] rounded-lg bg-white px-4 py-3 shadow-sm sm:w-auto"
+                    >
                       <h4 className="text-left text-sm font-bold sm:text-base">
                         {experience.role}
                       </h4>
@@ -495,7 +542,7 @@ export default function Home() {
                           );
                         })}
                       </ul>
-                    </div>
+                    </motion.div>
                   </TimelineContent>
                 </TimelineItem>
               );
@@ -510,7 +557,10 @@ export default function Home() {
           <header className="text-2xl font-bold uppercase">
             <h2>Any question? Feel free to contact me!</h2>
           </header>
-          <Button text={"Contact me"} />
+          <Button
+            text={"Contact me"}
+            handleClick={() => setIsContactModalOpen(true)}
+          />
         </section>
 
         <section

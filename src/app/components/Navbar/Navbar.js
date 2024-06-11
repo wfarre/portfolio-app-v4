@@ -101,7 +101,7 @@ const Navbar = ({ windowSize }) => {
 
   const variants = {
     open: {
-      width: "280px",
+      width: "320px",
     },
 
     closed: {
@@ -114,8 +114,10 @@ const Navbar = ({ windowSize }) => {
   // }, [windowScrollY]);
 
   return (
-    <nav
-      className={`fixed left-0 top-0 z-40 w-full bg-white text-sm sm:bg-transparent`}
+    <motion.nav
+      animate={{ translateY: ["-100%", "0"] }}
+      transition={{ duration: 1 }}
+      className={`fixed left-0 top-0 z-30 w-full bg-white text-base sm:bg-transparent`}
     >
       <ul
         className={`flex max-w-5xl items-center justify-end gap-4 bg-slate-300/20 px-4 py-2 align-middle sm:bg-transparent sm:px-10 sm:py-10 lg:mx-auto`}
@@ -125,7 +127,7 @@ const Navbar = ({ windowSize }) => {
           <li className="mr-auto">
             <motion.div whileHover={{ scale: 1.2 }}>
               <Link
-                className="rounded-lg bg-gradient-to-tr from-teal-500 to-teal-200 p-2 text-lg font-bold text-white"
+                className={`rounded-lg bg-gradient-to-tr from-teal-500 to-teal-200 p-2 text-lg font-bold text-white ${isMenuOpen && "opacity-0"} transition-opacity duration-300`}
                 href="/"
               >
                 WF
@@ -164,20 +166,22 @@ const Navbar = ({ windowSize }) => {
             <motion.div
               animate={isMenuOpen ? "open" : "closed"}
               variants={variants}
-              className={`relative flex min-h-9 min-w-10 items-center rounded-full border-2 border-solid border-slate-400 bg-slate-300/20 pl-2 ${isMenuOpen && "w-80"} transition-all duration-500 hover:border-teal-500`}
+              className={`relative flex min-h-11 min-w-12 items-center rounded-full border-2 border-solid border-slate-400 bg-slate-300/20 pl-2 ${isMenuOpen && "w-80"} transition-all duration-500 hover:border-teal-500`}
             >
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="absolute right-0 top-0 z-50 flex h-8 w-9 scale-75 flex-col justify-between px-1 py-1"
+                onClick={() => {
+                  setIsMenuOpen(!isMenuOpen);
+                }}
+                className="absolute right-0 top-0 z-40 flex h-10 w-11 scale-75 flex-col justify-between px-1 py-1"
               >
                 <div
-                  className={`h-1 w-full ${isMenuOpen && "translate-y-3 rotate-45"} bg-slate-500 transition-all duration-500`}
+                  className={`h-1 w-full ${isMenuOpen && "translate-y-4 rotate-45"} z-20 bg-slate-500 transition-all duration-500`}
                 ></div>
                 <div
-                  className={`h-1 w-full bg-slate-500 ${isMenuOpen && "opacity-0"} transition-all duration-300`}
+                  className={`h-1 w-full bg-slate-500 ${isMenuOpen && "opacity-0"} z-20 transition-all duration-300`}
                 ></div>
                 <div
-                  className={`h-1 w-full ${isMenuOpen && "translate-y-[-8px] rotate-[-45deg]"} bg-slate-500 transition-all duration-500`}
+                  className={`h-1 w-full ${isMenuOpen && "translate-y-[-12px] rotate-[-45deg]"} z-20 bg-slate-500 transition-all duration-500`}
                 ></div>
               </button>
 
@@ -188,7 +192,7 @@ const Navbar = ({ windowSize }) => {
                       <motion.li
                         animate={{ opacity: [0, 1] }}
                         transition={{ delay: 0.5 }}
-                        className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-0 after:bg-teal-500 after:transition-all after:duration-500 hover:after:scale-100"
+                        className="relative z-40 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-0 after:bg-teal-500 after:transition-all after:duration-500 hover:after:scale-100"
                         key={link.text + index}
                       >
                         <Link
@@ -206,7 +210,7 @@ const Navbar = ({ windowSize }) => {
           </motion.li>
         )}
       </ul>
-    </nav>
+    </motion.nav>
   );
 };
 

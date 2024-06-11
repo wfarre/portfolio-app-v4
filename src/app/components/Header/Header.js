@@ -13,7 +13,11 @@ const Header = ({ setIsContactModalOpen }) => {
       className="mx-4 mt-32 max-w-5xl text-center sm:px-10 sm:text-left lg:mx-auto"
     >
       <div className="flex flex-col-reverse items-center gap-4 sm:flex-row">
-        <ul className="flex w-fit max-w-[500px] flex-col gap-3">
+        <motion.ul
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="flex w-fit max-w-[500px] flex-col gap-3 opacity-0"
+        >
           <li>
             <h1 className="text-6xl font-bold text-slate-900">
               Hello, <br /> {"I'm "}
@@ -34,19 +38,15 @@ const Header = ({ setIsContactModalOpen }) => {
               text={"Contact me"}
               handleClick={() => setIsContactModalOpen(true)}
             />
-            {/* <motion.button
-              whileHover={{ scale: 1.2 }}
-              className="bg-gradient-to-tr from-teal-500 to-teal-200 py-2 px-6 rounded-lg text-white font-bold uppercase text-base"
-              onClick={() => setIsContactModalOpen(true)}
-              type="button"
-            >
-              Contact
-            </motion.button> */}
           </li>
-        </ul>
-        <div>
+        </motion.ul>
+        <motion.div
+          animate={{ translateX: ["100%", "0"], opacity: ["0", "100%"] }}
+          transition={{ duration: 1.5, type: "spring" }}
+          className="opacity-0"
+        >
           <Image src={HeroImage} alt="" />
-        </div>
+        </motion.div>
       </div>
     </header>
   );
