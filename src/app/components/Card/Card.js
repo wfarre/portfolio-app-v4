@@ -1,21 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
-
 import { github, liveurl } from "@/assets/icons";
-
-import KasaImg from "@/assets/images/kasa.png";
-import PetitsPlatsImg from "@/assets/images/petitsplats.png";
-import SpaceTourismImg from "@/assets/images/spacetourism.png";
-import PortfolioImg from "@/assets/images/porfolio.png";
-import FisheyeImg from "@/assets/images/fisheye.png";
-import EcommerceImg from "@/assets/images/ecommerce.png";
-// import Card from "./components/Card/Card";
 import { motion } from "framer-motion";
 
 const Card = (props) => {
-  const ref = useRef();
-
   return (
     <figure className="w-full">
       <motion.div

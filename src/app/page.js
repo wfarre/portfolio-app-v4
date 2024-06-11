@@ -12,14 +12,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import HotelIcon from "@mui/icons-material/Hotel";
-import RepeatIcon from "@mui/icons-material/Repeat";
-import Typography from "@mui/material/Typography";
-// import { icons } from "@/assets/icons/index";
 import ContactImage from "@/assets/images/contact-image.svg";
-import dynamic from "next/dynamic";
 
 import {
   css,
@@ -27,11 +20,9 @@ import {
   github,
   html,
   javascript,
-  // mui,
+  mui,
   nextjs,
-  // nodejs,
   react,
-  // redux,
   sass,
   tailwindcss,
   typescript,
@@ -39,6 +30,7 @@ import {
   phoneIcon,
   envelopeIcon,
   houseIcon,
+  bootstrap,
 } from "../assets/icons";
 
 import english from "@/assets/icons/english.svg";
@@ -81,6 +73,8 @@ const skills = [
   nextjs,
   git,
   github,
+  mui,
+  bootstrap,
 ];
 
 const languages = [french, english, japanese, chinese];
@@ -292,7 +286,6 @@ function useWindowSize() {
 }
 
 export default function Home() {
-  // console.log(window.innerWidth);
   const size = useWindowSize();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 

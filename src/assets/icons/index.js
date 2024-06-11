@@ -19,6 +19,7 @@ import liveurl from "./live-url.svg";
 import phoneIcon from "./phone.svg";
 import houseIcon from "./house.svg";
 import envelopeIcon from "./envelope.svg";
+import bootstrap from "./bootstrap.svg";
 
 export {
   css,
@@ -42,4 +43,5 @@ export {
   phoneIcon,
   envelopeIcon,
   houseIcon,
+  bootstrap,
 };

@@ -3,7 +3,6 @@
 import { motion, useScroll } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Button from "../Button/Button";
 
 const links = [
   {
@@ -24,39 +23,6 @@ const links = [
   },
 ];
 
-// function useWindowSize() {
-//   // Initialize state with undefined width/height so server and client renders match
-//   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-//   const [windowSize, setWindowSize] = useState({
-//     width: 0,
-//     height: 0,
-//   });
-
-//   useEffect(() => {
-//     // only execute all the code below in client side
-//     // Handler to call on window resize
-//     function handleScroll() {
-//       // Set window width/height to state
-//       setWindowSize({
-//         width: window?.innerWidth,
-//         height: window?.innerHeight,
-//       });
-//     }
-
-//     // Add event listener
-//     if (typeof window !== "object") {
-//       window?.addEventListener("resize", handleResize);
-
-//       console.log(window);
-//       // Call handler right away so state gets updated with initial window size
-//       handleResize(window);
-//       // Remove event listener on cleanup
-//       return () => window?.removeEventListener("resize", handleResize);
-//     }
-//   }, []); // Empty array ensures that effect is only run on mount
-//   return windowSize;
-// }
-
 const useScrollY = () => {
   const [windowScrollY, setWindowScrollY] = useState(0);
 
@@ -67,8 +33,6 @@ const useScrollY = () => {
 
     if (typeof window !== undefined)
       window?.addEventListener("scroll", (e) => {
-        // setIsMenuOpen(false);
-        // setWindowScrollY(window?.scrollY);
         handleScroll();
       });
 
@@ -79,7 +43,6 @@ const useScrollY = () => {
 
 const Navbar = ({ windowSize }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [windowScrollY, setWindowScrollY] = useState(false);
   const windowScrollY = useScrollY();
 
   console.log(windowScrollY);
@@ -90,15 +53,6 @@ const Navbar = ({ windowSize }) => {
     setIsMenuOpen(false);
   }, [windowScrollY]);
 
-  // useEffect(() => {
-  // if (window !== undefined)
-  //   window?.addEventListener("scroll", (e) => {
-  //     setIsMenuOpen(false);
-  //     setWindowScrollY(window?.scrollY);
-  //     return () => window?.removeEventListener("scroll", handleResize);
-  //   });
-  // }, []);
-
   const variants = {
     open: {
       width: "320px",
@@ -108,10 +62,6 @@ const Navbar = ({ windowSize }) => {
       width: "40px",
     },
   };
-
-  // useEffect(() => {
-  //   console.log(windowScrollY);
-  // }, [windowScrollY]);
 
   return (
     <motion.nav

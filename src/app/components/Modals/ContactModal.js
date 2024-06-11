@@ -55,7 +55,7 @@ const checkIfFormIsValid = (key, input) => {
   }
 };
 
-const ContactModal = ({ handleCloseModal }) => {
+const ContactModal = ({ handleCloseModal, publicKey }) => {
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
@@ -82,7 +82,7 @@ const ContactModal = ({ handleCloseModal }) => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     let isFormValid = true;
     let errors = isError;
     Object.keys(contactForm).map((key) => {
@@ -102,8 +102,8 @@ const ContactModal = ({ handleCloseModal }) => {
 
       emailjs
         .send(
-          "service_87axctf",
-          "template_34j0zm4",
+          process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_KEY,
+          process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_KEY,
           {
             name: contactForm.name,
             to_name: "William",
@@ -111,7 +111,7 @@ const ContactModal = ({ handleCloseModal }) => {
             to_email: "william.farre@gmail.com",
             message: contactForm.message,
           },
-          "Zy4KkVP1QGA55XG5u",
+          process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY,
         )
         .then(
           (response) => {

@@ -13,16 +13,7 @@ const Loader = ({ isLoading, onAnimationComplete }) => {
       className="h-16 w-16"
       onAnimationComplete={onAnimationComplete()}
     >
-      <div
-        // animate={{ scale: [0.01, 0.5, 1] }}
-        // transition={{ duration: 1.5, delay: 0.5 }}
-        className="h-full w-full animate-rotation rounded-[50%] border-[8px] border-white border-t-teal-500"
-      ></div>
-      {/* <div
-        animate={{ scale: [0.01, 0.5, 1] }}
-        transition={{ duration: 1.5, delay: 0.5 }}
-        className="h-16 w-16 animate-rotation rounded-[50%] border-[8px] border-white border-t-teal-500"
-      ></div> */}
+      <div className="h-full w-full animate-rotation rounded-[50%] border-[8px] border-white border-t-teal-500"></div>
     </motion.div>
   );
 };
