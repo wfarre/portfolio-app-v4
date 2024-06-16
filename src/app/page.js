@@ -591,7 +591,7 @@ export default function Home() {
         <ul className="mt-4 flex justify-center gap-4 pb-4">
           {snsLinks.map((link) => {
             return (
-              <motion.div key={link.description} whileHover={{ scale: 1.1 }}>
+              <motion.li key={link.description} whileHover={{ scale: 1.1 }}>
                 <Link
                   href={link.url}
                   target="_blank"
@@ -599,7 +599,7 @@ export default function Home() {
                 >
                   {link.logo}
                 </Link>
-              </motion.div>
+              </motion.li>
             );
           })}
         </ul>

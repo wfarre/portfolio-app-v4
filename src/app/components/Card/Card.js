@@ -24,6 +24,7 @@ const Card = (props) => {
               <Link
                 className="relative flex w-fit items-center gap-2 rounded-md px-2 py-1 uppercase text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-0 after:bg-white after:transition-all after:duration-300 hover:after:scale-100"
                 href={props.github}
+                target="_blank"
               >
                 View code
               </Link>
@@ -33,6 +34,7 @@ const Card = (props) => {
             <Link
               className="relative flex w-fit items-center gap-2 px-2 py-1 uppercase text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-0 after:bg-white after:transition-all after:duration-300 hover:after:scale-100"
               href={props.live}
+              target="_blank"
             >
               View website
             </Link>
@@ -58,24 +60,22 @@ const Card = (props) => {
           <ul className="flex items-center gap-2">
             {props.github && (
               <li>
-                <Link href={props.github}>
+                <Link href={props.github} target="_blank">
                   <Image
                     width={20}
                     height={20}
                     src={github}
-                    target="_blank"
                     alt="link to github repository"
                   />
                 </Link>
               </li>
             )}
             <li>
-              <Link href={props.live}>
+              <Link href={props.live} target="_blank">
                 <Image
                   width={20}
                   height={20}
                   src={liveurl}
-                  target="_blank"
                   alt="link to live website"
                 />
               </Link>
