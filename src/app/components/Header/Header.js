@@ -19,16 +19,16 @@ const Header = ({ setIsContactModalOpen }) => {
           className="flex w-fit max-w-[500px] flex-col gap-3 opacity-0"
         >
           <li>
-            <h1 className="text-6xl font-bold text-slate-900">
+            <h2 className="text-6xl font-bold text-slate-900">
               Hello, <br /> {"I'm "}
               <span className="bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-transparent">
                 William
               </span>
               .
-            </h1>
+            </h2>
           </li>
           <li>
-            <p className="text-xl font-bold">Front-End Web Developer</p>
+            <h1 className="text-xl font-bold">Front-End Web Developer</h1>
           </li>
           <li>
             <p>I am specialised in React and Google searches.</p>

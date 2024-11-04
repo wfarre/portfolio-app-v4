@@ -41,7 +41,8 @@ import {
   bootstrap,
 } from "../../assets/icons";
 
-const ContactInformationSection = () => {
+const ContactInformationSection = ({ setIsContactModalOpen }) => {
+  "";
   return (
     <section id="contact">
       <section className="mt-32 flex flex-col items-center justify-center gap-6 bg-slate-950/80 py-8 text-center text-white">
