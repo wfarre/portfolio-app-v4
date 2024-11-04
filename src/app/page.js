@@ -12,7 +12,6 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import ContactImage from "@/assets/images/contact-image.svg";
 
 import {
   css,
@@ -49,17 +48,12 @@ import Card from "./components/Card/Card";
 import TaskusLogo from "@/assets/images/logo/taskus-logo.jpeg";
 import JELogo from "@/assets/images/logo/je-logo.jpeg";
 import BanisterLogo from "@/assets/images/logo/banister-logo.jpeg";
-import {
-  Copyright,
-  Facebook,
-  GitHub,
-  Instagram,
-  LinkedIn,
-} from "@mui/icons-material";
-import Button from "./components/Button/Button";
-import SectionHeader from "./components/SectionHeader/SectionHeader";
+import Button from "./components/ui/Button/Button";
+import SectionHeader from "./components/ui/SectionHeader/SectionHeader";
 import { useEffect, useState } from "react";
 import ContactModal from "./components/Modals/ContactModal";
+import Footer from "./components/Footer/Footer";
+import ContactInformationSection from "./sections/ContactInformationSection";
 
 const skills = [
   html,
@@ -133,24 +127,6 @@ const projects = [
       github: "https://github.com/wfarre/ecommerce/tree/main",
       live: "https://ecommerce-jokg.vercel.app/",
     },
-  },
-];
-
-const personalInformation = [
-  {
-    title: "address",
-    icon: houseIcon,
-    content: "Kaohsiung, Sanmin District, Taiwan",
-  },
-  {
-    title: "phone number",
-    icon: phoneIcon,
-    content: "+886 (0)933-730-512",
-  },
-  {
-    title: "email address",
-    icon: envelopeIcon,
-    content: "william.farre@gmail.com",
   },
 ];
 
@@ -228,29 +204,6 @@ const workExperiences = [
       "Sell different products or services (SIM Card, Japan Rail Pass, car rental...) to travel in Japan.",
       "Assist customer by phone or email regarding the other services offered by Japan Experience.",
     ],
-  },
-];
-
-const snsLinks = [
-  {
-    url: "https://www.linkedin.com/in/william-farre-50657391/",
-    logo: <LinkedIn fontSize="inherit" />,
-    description: "link to my linkedin page",
-  },
-  {
-    url: "https://www.instagram.com/wfarre/",
-    logo: <Instagram fontSize="inherit" />,
-    description: "link to my instagram account",
-  },
-  {
-    url: "https://www.facebook.com/william.farre/",
-    logo: <Facebook fontSize="inherit" />,
-    description: "link to my facebook page",
-  },
-  {
-    url: "https://github.com/wfarre",
-    logo: <GitHub fontSize="inherit" />,
-    description: "link to my github repository",
   },
 ];
 
@@ -543,71 +496,9 @@ export default function Home() {
           </Timeline>
         </section>
 
-        <section
-          id="contact"
-          className="mt-32 flex flex-col items-center justify-center gap-6 bg-slate-950/80 py-8 text-center text-white"
-        >
-          <header className="text-2xl font-bold uppercase">
-            <h2>Any question? Feel free to contact me!</h2>
-          </header>
-          <Button
-            text={"Contact me"}
-            handleClick={() => setIsContactModalOpen(true)}
-          />
-        </section>
-
-        <section
-          id="contact-information"
-          className="mx-4 mb-32 mt-32 max-w-5xl sm:px-10 lg:mx-auto"
-        >
-          <SectionHeader headerTitle={"Contact Information"} />
-
-          <ul className="flex w-full flex-col flex-wrap items-center justify-between gap-8 sm:flex-row">
-            <li className="relative aspect-[767/810] max-h-96 w-52 sm:w-[40%]">
-              <Image src={ContactImage} alt="" fill />
-            </li>
-            <li className="flex flex-col gap-3">
-              {personalInformation.map((info, index) => {
-                return (
-                  <figure key={info.title + index} className="flex gap-3">
-                    <Image
-                      src={info.icon}
-                      width={20}
-                      height={20}
-                      alt={info.title}
-                    />
-                    <figcaption className="sm:text-2xl">
-                      {info.content}
-                    </figcaption>
-                  </figure>
-                );
-              })}
-            </li>
-          </ul>
-        </section>
+        <ContactInformationSection />
       </main>
-
-      <footer className="bg-slate-950/80 pt-4 text-white">
-        <ul className="mt-4 flex justify-center gap-4 pb-4">
-          {snsLinks.map((link) => {
-            return (
-              <motion.li key={link.description} whileHover={{ scale: 1.1 }}>
-                <Link
-                  href={link.url}
-                  target="_blank"
-                  className="text-2xl text-white transition-all duration-300 hover:text-teal-200 sm:text-4xl"
-                >
-                  {link.logo}
-                </Link>
-              </motion.li>
-            );
-          })}
-        </ul>
-        <div className="attribution text-center text-sm">
-          Designed and coded by William Farre. <Copyright />
-          2024
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

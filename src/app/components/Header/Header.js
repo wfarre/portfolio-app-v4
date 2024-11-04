@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import HeroImage from "@/assets/images/dev-image.svg";
-import Button from "../Button/Button";
+import Button from "../ui/Button/Button";
 
 const Header = ({ setIsContactModalOpen }) => {
   return (

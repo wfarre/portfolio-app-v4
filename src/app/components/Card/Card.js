@@ -9,7 +9,7 @@ const Card = (props) => {
     <figure className="w-full">
       <motion.div
         whileHover={{ scale: 1.05 }}
-        className="group relative aspect-[621/321] w-full overflow-hidden rounded-lg after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-teal-500 after:opacity-0 after:transition-all after:duration-300 hover:after:opacity-70"
+        className="group relative aspect-[621/321] w-full overflow-hidden rounded-lg after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:bg-teal-500 after:opacity-0 after:transition-all after:duration-300 focus-within:after:opacity-70 hover:after:opacity-70"
       >
         <Image
           className="object-cover"
@@ -18,7 +18,7 @@ const Card = (props) => {
           alt="ecommerce project"
         />
 
-        <ul className="absolute left-0 top-0 z-20 flex h-full w-full flex-col items-center justify-center gap-4 opacity-0 transition-all duration-500 group-hover:opacity-100">
+        <ul className="absolute left-0 top-0 z-20 flex h-full w-full flex-col items-center justify-center gap-4 opacity-0 transition-all duration-500 group-focus-within:opacity-100 group-hover:opacity-100">
           {props.github && (
             <li>
               <Link
