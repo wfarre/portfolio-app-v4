@@ -13,6 +13,7 @@ import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Image from "next/image";
 import useWindowSize from "../hooks/useWindowSize";
+import SectionFooter from "../components/ui/SectionFooter";
 
 const workExperiences = [
   {
@@ -102,7 +103,7 @@ const ExperienceSection = () => {
       <SectionHeader
         headerTitle={"Experiences"}
         headerContent={
-          "Before turning into programming, I worked for 10 years in the customer service industry, including in the hospitality/travel industry where I developped my interpersonal and language skills. Here are my main professional experiences."
+          "I’m William Farré, a frontend web developer with a diverse background, having transitioned from the hospitality industry into tech. I specialize in web development using technologies like React.js, Svelte.js, Sass, and TypeScript to create responsive and dynamic applications. I'm fluent in French, English, and Japanese, which helps me collaborate effectively in multicultural environments. I’m passionate about learning and continuously strive to grow in my field, ensuring that the solutions I build are innovative and user-focused."
         }
         headerLinks={[
           {
@@ -150,6 +151,7 @@ const ExperienceSection = () => {
                       className="left-0 top-0 object-contain"
                       src={experience.logo}
                       fill
+                      sizes="100%"
                       alt={"logo"}
                     />
                   )}
@@ -210,6 +212,7 @@ const ExperienceSection = () => {
           );
         })}
       </Timeline>
+      <SectionFooter />
     </section>
   );
 };

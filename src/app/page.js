@@ -51,6 +51,7 @@ import ExperienceSection from "./sections/ExperienceSection";
 import useWindowSize from "./hooks/useWindowSize";
 import SkillSection from "./sections/SkillSection";
 import ProjectSection from "./sections/ProjectSection";
+import { AuroraBackground } from "./components/ui/Aurora";
 
 export default function Home() {
   const size = useWindowSize();
@@ -58,6 +59,7 @@ export default function Home() {
 
   return (
     <div className="relative w-full">
+      <AuroraBackground className={"absolute left-0 top-0"} />
       {isContactModalOpen && (
         <ContactModal handleCloseModal={() => setIsContactModalOpen(false)} />
       )}

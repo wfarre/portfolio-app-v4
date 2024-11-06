@@ -6,8 +6,8 @@ import React, { useEffect, useState } from "react";
 
 const links = [
   {
-    text: "About",
-    path: "#about",
+    text: "about",
+    path: "#experiences",
   },
   {
     text: "Skills",

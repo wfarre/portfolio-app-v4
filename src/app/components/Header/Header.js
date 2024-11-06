@@ -1,53 +1,41 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
 import React from "react";
-import HeroImage from "@/assets/images/dev-image.svg";
 import Button from "../ui/Button/Button";
+import { AuroraBackground } from "../ui/Aurora";
+import OrbitCircles from "../ui/OrbitCircles";
+import IconCloud from "@/components/magicui/icon-cloud";
 
 const Header = ({ setIsContactModalOpen }) => {
   return (
     <header
       id="home"
-      className="mx-4 mt-32 max-w-5xl text-center sm:px-10 sm:text-left lg:mx-auto"
+      className="relative flex h-[100vh] justify-center sm:px-10 sm:text-left"
     >
-      <div className="flex flex-col-reverse items-center gap-4 sm:flex-row">
-        <motion.ul
-          animate={{ opacity: [0, 1] }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="flex w-fit max-w-[500px] flex-col gap-3 opacity-0"
-        >
-          <li>
-            <h2 className="text-6xl font-bold text-slate-900">
-              Hello, <br /> {"I'm "}
-              <span className="bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-transparent">
-                William
-              </span>
-              .
-            </h2>
-          </li>
-          <li>
-            <h1 className="text-xl font-bold">Front-End Web Developer</h1>
-          </li>
-          <li>
-            <p>I am specialised in React and Google searches.</p>
-          </li>
-          <li className="mt-3">
-            <Button
-              text={"Contact me"}
-              handleClick={() => setIsContactModalOpen(true)}
-            />
-          </li>
-        </motion.ul>
-        <motion.div
-          animate={{ translateX: ["100%", "0"], opacity: ["0", "100%"] }}
-          transition={{ duration: 1.5, type: "spring" }}
-          className="opacity-0"
-        >
-          <Image src={HeroImage} alt="" />
-        </motion.div>
+      <div className="z-10 flex h-full w-full max-w-[600px] flex-1 flex-col items-center justify-center text-center">
+        <h2 className="font-bold text-slate-900 md:text-xl">
+          Hello 👋, {"I'm William"}
+        </h2>
+
+        <h1 className="bg-gradient-to-tr from-teal-500 to-teal-200 bg-clip-text text-6xl font-bold uppercase text-transparent md:text-8xl">
+          Frontend <br /> Developer
+        </h1>
+
+        <p className="mb-8 mt-4">
+          I am a dedicated frontend developer skilled in creating responsive,
+          user-friendly web applications using React, JavaScript, and
+          TypeScript.
+        </p>
+
+        <Button
+          text={"Contact me"}
+          handleClick={() => setIsContactModalOpen(true)}
+        />
       </div>
+      {/* <div className="relative left-[-150px] z-0 w-[700px]"> */}
+      {/* <OrbitCircles></OrbitCircles> */}
+      {/* <IconCloud /> */}
+      {/* </div> */}
     </header>
   );
 };

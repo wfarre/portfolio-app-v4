@@ -23,6 +23,7 @@ import english from "@/assets/icons/english.svg";
 import japanese from "@/assets/icons/japanese.svg";
 import french from "@/assets/icons/french.svg";
 import chinese from "@/assets/icons/chinese.svg";
+import SectionFooter from "../components/ui/SectionFooter";
 
 const skills = [
   {
@@ -100,7 +101,7 @@ const SkillSection = () => {
       <SectionHeader
         headerTitle={"skills"}
         headerContent={
-          "Beside my google searching skills, I have many other skills in Programming. Also, I have lived for several Japan so I can speak Japanese fluently. Please check below to discover my other skills. "
+          "Beside my google searching skills, I have many other skills in Programming. Also, I have lived for several years in Japan so I can speak Japanese fluently. Please check below my other skills. "
         }
       />
 
@@ -166,6 +167,7 @@ const SkillSection = () => {
           </ul>
         </li>
       </ul>
+      <SectionFooter />
     </section>
   );
 };

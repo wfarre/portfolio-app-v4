@@ -14,7 +14,7 @@ const Card = (props) => {
         <Image
           className="object-cover"
           src={props.imageUrl}
-          fill={true}
+          // fill={true}
           alt="ecommerce project"
         />
 

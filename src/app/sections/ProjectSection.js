@@ -9,6 +9,7 @@ import SpaceTourismImg from "@/assets/images/spacetourism.png";
 import PortfolioImg from "@/assets/images/porfolio.png";
 import FisheyeImg from "@/assets/images/fisheye.png";
 import EcommerceImg from "@/assets/images/ecommerce.png";
+import SectionFooter from "../components/ui/SectionFooter";
 
 const projects = [
   {
@@ -116,6 +117,7 @@ const ProjectSection = () => {
           );
         })}
       </motion.ul>
+      <SectionFooter />
     </section>
   );
 };

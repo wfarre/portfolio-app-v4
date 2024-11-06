@@ -40,6 +40,7 @@ import {
   houseIcon,
   bootstrap,
 } from "../../assets/icons";
+import SectionFooter from "../components/ui/SectionFooter";
 
 const ContactInformationSection = ({ setIsContactModalOpen }) => {
   "";
@@ -82,6 +83,7 @@ const ContactInformationSection = ({ setIsContactModalOpen }) => {
             })}
           </li>
         </ul>
+        <SectionFooter />
       </section>
     </section>
   );
