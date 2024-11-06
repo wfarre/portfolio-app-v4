@@ -2,7 +2,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  preload: true,
+  adjustFontFallback: false,
+});
 
 export const metadata = {
   title: "Create Next App",
