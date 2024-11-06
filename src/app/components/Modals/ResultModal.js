@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Button from "../ui/Button/Button";
+import Button from "../ui/Button";
 
 const ResultModal = ({ isSuccess, handleClick }) => {
   return (

@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import { github, liveurl } from "@/assets/icons";
 import { motion } from "framer-motion";
+import Loader from "./ui/Loader";
 
 const Card = (props) => {
   return (
@@ -14,7 +15,8 @@ const Card = (props) => {
         <Image
           className="object-cover"
           src={props.imageUrl}
-          // fill={true}
+          placeholder={"blur"}
+          loading="lazy"
           alt="ecommerce project"
         />
 
