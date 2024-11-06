@@ -2,8 +2,8 @@
 
 import { animate, motion } from "framer-motion";
 import Link from "next/link";
-import Navbar from "./components/Navbar/Navbar";
-import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import Image from "next/image";
 
 import {
@@ -36,22 +36,21 @@ import SpaceTourismImg from "@/assets/images/spacetourism.png";
 import PortfolioImg from "@/assets/images/porfolio.png";
 import FisheyeImg from "@/assets/images/fisheye.png";
 import EcommerceImg from "@/assets/images/ecommerce.png";
-import Card from "./components/Card/Card";
+import Card from "./components/Card";
 
 import TaskusLogo from "@/assets/images/logo/taskus-logo.jpeg";
 import JELogo from "@/assets/images/logo/je-logo.jpeg";
 import BanisterLogo from "@/assets/images/logo/banister-logo.jpeg";
-import Button from "./components/ui/Button/Button";
-import SectionHeader from "./components/ui/SectionHeader/SectionHeader";
+import Button from "./components/ui/Button";
+import SectionHeader from "./components/ui/SectionHeader";
 import { useEffect, useState } from "react";
 import ContactModal from "./components/Modals/ContactModal";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer";
 import ContactInformationSection from "./sections/ContactInformationSection";
 import ExperienceSection from "./sections/ExperienceSection";
 import useWindowSize from "./hooks/useWindowSize";
 import SkillSection from "./sections/SkillSection";
 import ProjectSection from "./sections/ProjectSection";
-import { AuroraBackground } from "./components/ui/Aurora";
 
 export default function Home() {
   const size = useWindowSize();
@@ -59,7 +58,6 @@ export default function Home() {
 
   return (
     <div className="relative w-full">
-      <AuroraBackground className={"absolute left-0 top-0"} />
       {isContactModalOpen && (
         <ContactModal handleCloseModal={() => setIsContactModalOpen(false)} />
       )}

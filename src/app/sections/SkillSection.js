@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { animate, motion } from "framer-motion";
-import SectionHeader from "../components/ui/SectionHeader/SectionHeader";
+import SectionHeader from "../components/ui/SectionHeader";
 
 import {
   css,

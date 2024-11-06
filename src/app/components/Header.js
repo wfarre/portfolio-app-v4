@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import Button from "../ui/Button/Button";
-import { AuroraBackground } from "../ui/Aurora";
-import OrbitCircles from "../ui/OrbitCircles";
+import Button from "./ui/Button";
+import OrbitCircles from "./ui/OrbitCircles";
 import IconCloud from "@/components/magicui/icon-cloud";
 
 const Header = ({ setIsContactModalOpen }) => {

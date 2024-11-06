@@ -1,7 +1,7 @@
 import React from "react";
-import SectionHeader from "../components/ui/SectionHeader/SectionHeader";
+import SectionHeader from "../components/ui/SectionHeader";
 import Image from "next/image";
-import Button from "../components/ui/Button/Button";
+import Button from "../components/ui/Button";
 import ContactImage from "@/assets/images/contact-image.svg";
 
 const personalInformation = [
@@ -22,30 +22,13 @@ const personalInformation = [
   },
 ];
 
-import {
-  css,
-  git,
-  github,
-  html,
-  javascript,
-  mui,
-  nextjs,
-  react,
-  sass,
-  tailwindcss,
-  typescript,
-  svelte,
-  phoneIcon,
-  envelopeIcon,
-  houseIcon,
-  bootstrap,
-} from "../../assets/icons";
+import { phoneIcon, envelopeIcon, houseIcon } from "../../assets/icons";
 import SectionFooter from "../components/ui/SectionFooter";
 
 const ContactInformationSection = ({ setIsContactModalOpen }) => {
   "";
   return (
-    <section id="contact">
+    <div id="contact">
       <section className="mt-32 flex flex-col items-center justify-center gap-6 bg-slate-950/80 py-8 text-center text-white">
         <header className="text-2xl font-bold uppercase">
           <h2>Any question? Feel free to contact me!</h2>
@@ -68,12 +51,11 @@ const ContactInformationSection = ({ setIsContactModalOpen }) => {
           <li className="flex flex-col gap-3">
             {personalInformation.map((info, index) => {
               return (
-                <figure key={info.title + index} className="flex gap-3">
+                <figure key={info.title + index} className="flex w-auto gap-3">
                   <Image
                     src={info.icon}
-                    width={20}
-                    height={20}
                     alt={info.title}
+                    className="h-auto w-5"
                   />
                   <figcaption className="sm:text-2xl">
                     {info.content}
@@ -85,7 +67,7 @@ const ContactInformationSection = ({ setIsContactModalOpen }) => {
         </ul>
         <SectionFooter />
       </section>
-    </section>
+    </div>
   );
 };
 

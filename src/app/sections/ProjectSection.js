@@ -1,7 +1,7 @@
 import React from "react";
-import Card from "../components/Card/Card";
+import Card from "../components/Card";
 import { animate, motion } from "framer-motion";
-import SectionHeader from "../components/ui/SectionHeader/SectionHeader";
+import SectionHeader from "../components/ui/SectionHeader";
 
 import KasaImg from "@/assets/images/kasa.png";
 import PetitsPlatsImg from "@/assets/images/petitsplats.png";

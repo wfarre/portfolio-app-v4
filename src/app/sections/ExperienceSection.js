@@ -1,6 +1,6 @@
 import React from "react";
 import { animate, motion } from "framer-motion";
-import SectionHeader from "../components/ui/SectionHeader/SectionHeader";
+import SectionHeader from "../components/ui/SectionHeader";
 import TaskusLogo from "@/assets/images/logo/taskus-logo.jpeg";
 import JELogo from "@/assets/images/logo/je-logo.jpeg";
 import BanisterLogo from "@/assets/images/logo/banister-logo.jpeg";
@@ -151,7 +151,7 @@ const ExperienceSection = () => {
                       className="left-0 top-0 object-contain"
                       src={experience.logo}
                       fill
-                      sizes="100%"
+                      sizes="40px"
                       alt={"logo"}
                     />
                   )}
