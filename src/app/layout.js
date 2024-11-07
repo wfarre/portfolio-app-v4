@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} relative bg-slate-300/20 text-sm text-slate-500 sm:text-base`}
+        className={`${inter.className} relative bg-slate-300/20 text-sm text-slate-600 sm:text-base`}
       >
         <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
       </body>
