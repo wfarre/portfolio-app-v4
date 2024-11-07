@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useRef } from "react";
 import { github, liveurl } from "@/assets/icons";
 import { motion } from "framer-motion";
-import Loader from "./ui/Loader";
+import Loader from "./Loader";
 
 const Card = (props) => {
   return (
@@ -17,7 +17,7 @@ const Card = (props) => {
           src={props.imageUrl}
           placeholder={"blur"}
           loading="lazy"
-          alt="ecommerce project"
+          alt={props.title}
         />
 
         <ul className="absolute left-0 top-0 z-20 flex h-full w-full flex-col items-center justify-center gap-4 opacity-0 transition-all duration-500 group-focus-within:opacity-100 group-hover:opacity-100">

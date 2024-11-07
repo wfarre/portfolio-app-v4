@@ -2,7 +2,7 @@ import React from "react";
 import SectionHeader from "../components/ui/SectionHeader";
 import Image from "next/image";
 import Button from "../components/ui/Button";
-import ContactImage from "@/assets/images/contact-image.svg";
+import ContactImage from "@/assets/images/decorations/contact-image.svg";
 
 const personalInformation = [
   {

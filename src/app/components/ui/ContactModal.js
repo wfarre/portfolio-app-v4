@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import SectionHeader from "../ui/SectionHeader";
-import Button from "../ui/Button";
-import { animate, motion } from "framer-motion";
+import React, { useState } from "react";
+import SectionHeader from "./SectionHeader";
+import Button from "./Button";
+import { motion } from "framer-motion";
 import ResultModal from "./ResultModal";
-import Loader from "../ui/Loader";
+import Loader from "./Loader";
 import emailjs from "@emailjs/browser";
 import { Close } from "@mui/icons-material";
 
