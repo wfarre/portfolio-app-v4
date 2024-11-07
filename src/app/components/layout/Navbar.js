@@ -55,7 +55,7 @@ const Navbar = ({ windowSize }) => {
       transition={{ duration: 1 }}
       className={`fixed left-0 top-6 z-30 flex w-full justify-center text-base`}
     >
-      <ul className="flex h-full justify-center gap-4 rounded-full px-6 text-slate-700 backdrop-blur-lg">
+      <ul className="flex h-full justify-center gap-4 rounded-full px-6 backdrop-blur-lg">
         {links.map((link, index) => {
           return (
             <li
