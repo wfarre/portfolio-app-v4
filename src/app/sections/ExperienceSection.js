@@ -152,7 +152,7 @@ const ExperienceSection = () => {
                       src={experience.logo}
                       fill
                       sizes="40px"
-                      alt={"logo"}
+                      alt={`logo ${experience.alt}`}
                     />
                   )}
                 </TimelineDot>

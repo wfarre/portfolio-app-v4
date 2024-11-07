@@ -1,20 +1,20 @@
 import React from "react";
-import Card from "../components/Card";
-import { animate, motion } from "framer-motion";
+import Card from "../components/ui/Card";
+import { motion } from "framer-motion";
 import SectionHeader from "../components/ui/SectionHeader";
 
-import KasaImg from "@/assets/images/kasa.png";
-import PetitsPlatsImg from "@/assets/images/petitsplats.png";
-import SpaceTourismImg from "@/assets/images/spacetourism.png";
-import PortfolioImg from "@/assets/images/porfolio.png";
-import FisheyeImg from "@/assets/images/fisheye.png";
-import EcommerceImg from "@/assets/images/ecommerce.png";
+import KasaImg from "@/assets/images/projects/kasa.png";
+import PetitsPlatsImg from "@/assets/images/projects/petitsplats.png";
+import SpaceTourismImg from "@/assets/images/projects/spacetourism.png";
+import PortfolioImg from "@/assets/images/projects/porfolio.png";
+import FisheyeImg from "@/assets/images/projects/fisheye.png";
+import EcommerceImg from "@/assets/images/projects/ecommerce.png";
 import SectionFooter from "../components/ui/SectionFooter";
 
 const projects = [
   {
     imageUrl: PortfolioImg,
-    title: "Portfolio(frontend mentor)",
+    title: "Portfolio (frontend mentor)",
     tags: ["Nextjs", "CSS"],
     links: {
       github: "https://github.com/wfarre/fake-portfolio/tree/main",
@@ -23,10 +23,10 @@ const projects = [
   },
   {
     imageUrl: FisheyeImg,
-    title: "Fisheye(OpenClassrooms' project)",
+    title: "Fisheye (OpenClassrooms' project)",
     tags: ["HTML", "Javascript", "Sass", "Accessibility"],
     links: {
-      github: "https://github.com/wfarre/Front-End-Fisheye/tree/mainn",
+      github: "https://github.com/wfarre/Front-End-Fisheye/tree/main",
       live: "https://front-end-fisheye.vercel.app/",
     },
   },
@@ -41,7 +41,7 @@ const projects = [
   },
   {
     imageUrl: KasaImg,
-    title: "Kasa(OpenClassrooms' project)",
+    title: "Kasa (OpenClassrooms' project)",
     tags: ["React", "Sass"],
     links: {
       github: "",
@@ -50,7 +50,7 @@ const projects = [
   },
   {
     imageUrl: SpaceTourismImg,
-    title: "Space Tourism(frontend mentor)",
+    title: "Space Tourism (frontend mentor)",
     tags: ["Nextjs", "Sass", "Typescript"],
     links: {
       github: "https://github.com/wfarre/space-tourism-app/tree/main",
@@ -59,7 +59,7 @@ const projects = [
   },
   {
     imageUrl: EcommerceImg,
-    title: "Ecommerce(frontend mentor)",
+    title: "Ecommerce (frontend mentor)",
     tags: ["Typescript", "CSS", "HTML"],
     links: {
       github: "https://github.com/wfarre/ecommerce/tree/main",
