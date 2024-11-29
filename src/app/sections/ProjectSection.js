@@ -42,10 +42,10 @@ const projects = [
   {
     imageUrl: KasaImg,
     title: "Kasa (OpenClassrooms' project)",
-    tags: ["React", "Sass"],
+    tags: ["React", "Sass", "Typescript", "React-router"],
     links: {
-      github: "",
-      live: "https://kasa-app-p11.vercel.app/",
+      github: "https://github.com/wfarre/kasa-v2/tree/main",
+      live: "https://kasa-v2-tau.vercel.app/",
     },
   },
   {

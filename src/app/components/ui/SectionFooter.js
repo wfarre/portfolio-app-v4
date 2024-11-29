@@ -6,7 +6,7 @@ const SectionFooter = () => {
     <footer className="mt-6 flex justify-end">
       <Link
         href={"#home"}
-        className="z-50 font-semibold uppercase text-teal-400 hover:text-teal-300"
+        className="z-50 font-semibold uppercase text-teal-500 hover:opacity-70"
         target="_self"
       >
         Go to the top ↑
